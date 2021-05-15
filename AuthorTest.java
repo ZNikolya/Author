@@ -7,7 +7,7 @@ public class AuthorTest {
 
     public static void main(String[] args) {
 
-        Author author = new Author();
+
         AuthorStorage authorStorage = new AuthorStorage();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Քանի հատ հեղինակ ունենք");
@@ -15,6 +15,7 @@ public class AuthorTest {
 
 
         for (int i = 0; i < number; i++) {
+            Author author = new Author();
             System.out.println("Ներմուծեք անուն");
             author.setName(scanner.next());
             System.out.println("Ներմուծեք ազգանուն");
