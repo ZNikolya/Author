@@ -1,4 +1,6 @@
-package homework.author;
+package homework.author.Storgae;
+
+import homework.author.model.Author;
 
 public class AuthorStorage {
 
@@ -29,4 +31,11 @@ public class AuthorStorage {
     }
 
 
+    public void searchByName(java.lang.String name) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].getName().contains(name)){
+                System.out.println(array[i]);
+            }
+        }
+    }
 }
