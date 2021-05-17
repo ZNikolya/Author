@@ -1,7 +1,7 @@
 package homework.author;
 
-import homework.author.Storgae.AuthorStorage;
-import homework.author.Storgae.BookStorage;
+import homework.author.storage.AuthorStorage;
+import homework.author.storage.BookStorage;
 import homework.author.model.Author;
 import homework.author.model.Book;
 

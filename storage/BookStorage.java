@@ -1,4 +1,4 @@
-package homework.author.Storgae;
+package homework.author.storage;
 
 import homework.author.model.Book;
 
