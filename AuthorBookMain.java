@@ -1,9 +1,9 @@
 package homework.author;
 
-import homework.author.storage.AuthorStorage;
-import homework.author.storage.BookStorage;
 import homework.author.model.Author;
 import homework.author.model.Book;
+import homework.author.storage.AuthorStorage;
+import homework.author.storage.BookStorage;
 
 import java.util.Scanner;
 
@@ -26,7 +26,6 @@ public class AuthorBookMain {
             System.out.println("Ներմուծեք 5 բոլոր գրքերը տեսնելու համար");
             System.out.println("Ներմուծեք 6 տրված գնի սահմաններում գրքերը տեսնելու համար");
             System.out.println("Ներմուծեք 7 գիրքը վերնագրով և հեղինակի email-ով փնտրելու համար");
-
             int command;
             try {
                 command = Integer.parseInt(scanner.nextLine());
@@ -44,8 +43,8 @@ public class AuthorBookMain {
             } catch (NumberFormatException e) {
                 command = -1;
             }
-
         }
+
     }
 
     private static void isBookExist() {
@@ -74,7 +73,7 @@ public class AuthorBookMain {
         book.setDescription(scanner.next());
         System.out.println("Ներմուծեք գինը");
         book.setPrice(Integer.parseInt(scanner.next()));
-        System.out.println("Ներմուծեք count");
+        System.out.println("Ներմուծեք քանակը");
         book.setCount(Integer.parseInt(scanner.next()));
         System.out.println("Ներմուծեք գրքի հեղինակին");
         book.setAuthorEmail(scanner.next());

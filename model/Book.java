@@ -1,5 +1,6 @@
 package homework.author.model;
 
+
 import java.util.Objects;
 
 public class Book {
