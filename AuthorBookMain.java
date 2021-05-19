@@ -61,7 +61,7 @@ public class AuthorBookMain {
         int min = Integer.parseInt(scanner.next());
         System.out.println("Ներմուծեք մաքսիմում գինը");
         int max = Integer.parseInt(scanner.next());
-        bookStorage.printBookByPriceRang(min,max);
+        bookStorage.printBookByPriceRang(min, max);
     }
 
     private static void addBook() {
