@@ -1,5 +1,6 @@
 package homework.author;
 
+import homework.Commands;
 import homework.author.model.Author;
 import homework.author.model.Book;
 import homework.author.storage.AuthorStorage;
@@ -7,37 +8,33 @@ import homework.author.storage.BookStorage;
 
 import java.util.Scanner;
 
-public class AuthorBookMain {
+public class AuthorBookMain implements Commands {
+
 
     static AuthorStorage authorStorage = new AuthorStorage();
     static BookStorage bookStorage = new BookStorage();
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(java.lang.String[] args) {
+    public static void main(String[] args) {
 
         boolean run = true;
         while (run) {
 
-            System.out.println("Ներմուծեք 0 դուրս գալու համար");
-            System.out.println("Ներմուծեք 1 հեղինակ ավելացնելու համար");
-            System.out.println("Ներմուծեք 2 հեղինակին անունով փնտրելու համար");
-            System.out.println("Ներմուծեք 3 բոլոր հեղինակներին տեսնելու համար");
-            System.out.println("Ներմուծեք 4 գիրք ավելացնելու համար");
-            System.out.println("Ներմուծեք 5 բոլոր գրքերը տեսնելու համար");
-            System.out.println("Ներմուծեք 6 տրված գնի սահմաններում գրքերը տեսնելու համար");
-            System.out.println("Ներմուծեք 7 գիրքը վերնագրով և հեղինակի email-ով փնտրելու համար");
+            Commands.printCommands();
+
             int command;
             try {
-                command = Integer.parseInt(scanner.nextLine());
+
+                command = Integer.parseInt(scanner.next());
                 switch (command) {
-                    case 0 -> run = false;
-                    case 1 -> addAuthor();
-                    case 2 -> searchByName();
-                    case 3 -> authorStorage.printAuthor();
-                    case 4 -> addBook();
-                    case 5 -> bookStorage.printBook();
-                    case 6 -> printBookByPriceRang();
-                    case 7 -> isBookExist();
+                    case EXIT -> run = false;
+                    case ADD_AUTHOR -> addAuthor();
+                    case SEARCH_AUTHOR_BY_NAME -> searchByName();
+                    case PRINT_ALL_AUTHORS -> authorStorage.printAuthor();
+                    case ADD_BOOK -> addBook();
+                    case PRINT_ALL_BOOKS -> bookStorage.printBook();
+                    case PRINT_BOOK_BY_RANGE -> printBookByPriceRang();
+                    case CHECK_BOOK -> isBookExist();
                     default -> System.out.println("Սխալ հրաման");
                 }
             } catch (NumberFormatException e) {
@@ -52,7 +49,7 @@ public class AuthorBookMain {
         String title = scanner.next();
         System.out.println("իսկ հիմա հեղինակի email-ը");
         String authorEmail = scanner.next();
-        bookStorage.isBookExist(title, authorEmail);
+        System.out.println(bookStorage.isBookExist(title, authorEmail));
 
     }
 
