@@ -29,22 +29,22 @@ public class BookStorage {
         System.out.println();
     }
 
-    public Book printBookByPriceRang(int min, int max) {
+    public void printBookByPriceRang(int min, int max) {
         for (int i = 0; i < size; ++i) {
             if (array[i].getPrice() >= min && array[i].getPrice() <= max) {
-                return array[i];
+                System.out.println(array[i]);
             }
         }
-        return null;
+
     }
 
 
-    public Book isBookExist(String title, String authorEmail) {
+    public boolean isBookExist(String title, String authorEmail) {
         for (int i = 0; i < size; i++) {
             if (array[i].getTitle().equalsIgnoreCase(title) && array[i].getAuthorEmail().equalsIgnoreCase(authorEmail)) {
-                System.out.println(true);
+                return true;
             }
         }
-        return null;
+        return false;
     }
 }
